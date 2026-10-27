@@ -1,0 +1,9 @@
+MJ BOARD
+M:	mjshin <minjooshin0313@gmail.com>
+S:	Maintained
+F:	board/mj/
+F:	include/configs/mj_board.h
+F:	configs/mj_defconfig
+F:	arch/arm/dts/mj.dts
+F:	arch/arm/dts/mj.dtsi
+F:	drivers/mmc/mj_sdhci.c

@@ -512,6 +512,12 @@ config MMC_SDHCI
 
 	  If unsure, say N.
 
+config MMC_SDHCI_MJ
+	bool "MJ SDHCI controller"
+	depends on MMC_SDHCI && DM_MMC && OF_CONTROL
+	help
+	  Support for the MJ board SDHCI controller.
+
 config MMC_SDHCI_IO_ACCESSORS
 	bool
 	depends on MMC_SDHCI

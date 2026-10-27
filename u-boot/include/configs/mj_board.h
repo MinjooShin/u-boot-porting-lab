@@ -1,0 +1,6 @@
+#ifndef __CONFIG_MJ_BOARD_H
+#define __CONFIG_MJ_BOARD_H
+
+#define CFG_SYS_SDRAM_BASE 0x40000000
+
+#endif /* __CONFIG_MJ_BOARD_H */

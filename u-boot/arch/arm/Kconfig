@@ -2252,6 +2252,12 @@ config ARCH_GXP
 	select OF_CONTROL
 	imply CMD_DM
 
+config TARGET_MJ_BOARD
+	bool "Support MJ Board"
+	select ARM64
+	select DM
+	select OF_CONTROL
+
 endchoice
 
 config SUPPORT_PASSING_ATAGS
@@ -2519,5 +2525,6 @@ source "board/phytium/pe2201/Kconfig"
 source "board/xen/xenguest_arm64/Kconfig"
 
 source "arch/arm/Kconfig.debug"
+source "board/mj/Kconfig"
 
 endmenu

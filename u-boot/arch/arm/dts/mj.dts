@@ -1,0 +1,45 @@
+/dts-v1/;
+/include/ "mj.dtsi"
+
+/ {
+	model = "MJ Board";
+	compatible = "mj,lab-board";
+
+	aliases {
+		serial0 = &uart3;
+		mmc0 = &mmc1;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	psci {
+		compatible = "arm,psci-0.2";
+		method = "smc";
+		bootph-some-ram;
+	};
+
+	memory@40000000 {
+		device_type = "memory";
+		/* DDR1: 1 GiB, followed by DDR0: 2 GiB. */
+		reg = <0x0 0x40000000 0x0 0xc0000000>;
+	};
+};
+
+&{/soc} {
+	bootph-some-ram;
+};
+
+&uart3 {
+	status = "okay";
+	bootph-some-ram;
+};
+
+&mmc1 {
+	status = "okay";
+	/* SD bus limit; the controller reports its input clock separately. */
+	max-frequency = <50000000>;
+	bus-width = <4>;
+	no-1-8-v;
+};

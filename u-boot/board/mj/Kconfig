@@ -1,0 +1,9 @@
+if TARGET_MJ_BOARD
+
+config SYS_BOARD
+	default "mj"
+
+config SYS_CONFIG_NAME
+	default "mj_board"
+
+endif
